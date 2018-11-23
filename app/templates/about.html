@@ -1,0 +1,67 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to Memorable Adventure Website </title>
+    {% endif %}
+</head>
+{% block content %}
+
+<div class="container">
+    <h1> {{ message }} </h1>
+
+    <h1>Interview Pitch</h1>
+    <p>Tips For Pitching Interview</p>
+    <ul>
+        <li>Keep it short and snappy</li>
+        <li>Keep it natural</li>
+        <li>Your pitch should reflect your professionalism</li>
+    </ul>
+    <div class="row">
+        <div class="col-md-6">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ form.body.label(class="form-control-label") }}
+                    {% if form.body.errors %}
+                    {{ form.body(class="form-control-lg is -invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.body(class="form-control-lg") }}
+                    {% endif%}
+                </div>
+            </div>
+        </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        </form>
+    </div>
+    {% for pitch in interview_data%}
+    <p>{{pitch.description}}</p>
+    <a href="{{url_for('main.comment',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">Add
+            Adventure</button></a>
+    <a href="{{url_for('main.view_comments',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">View
+            Comment</button></a>
+    {% endfor %}
+    {% for comment in comments%}
+    <p>{{pitch.description}}</p>
+    {% endfor %}
+</div>
+</div>
+
+{% endblock %}
