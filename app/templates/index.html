@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title>Welcome to  A FANTASY EXPERIENCE BLOG</title>
+    {% endif %}
+</head>
+{% block content %}
+
+<div class="container">
+    <h1> {{ message }} </h1>
+    <div class="row">
+        <div class="col-md-8">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXRj0AH8sMn6_clFMQazetJyN3jc99PotMz5Scm5cqGxrr3ogu4Q"
+                width="760" height="450" alt="photo">
+        </div>
+        <div class="col-md-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNts285_aLCPA5UspWeEy6ryUurefyAxQfn11LBd7QwlWRAVEf"
+                width="500" height="200" alt="photo">
+            <br><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScPBmXs83MycC08sALB9YIXcgSmsNvGA0GXSlZd8Bei3ioRdaW"
+                width="500" height="230" atl="image">
+        </div>
+    </div>
+
+    <br><br>
+    <br><br>
+
+    <div class="text" style="text-align:center">
+        <h1>About Us</h1>
+        <p>We are an organisation that help to encourage people believe in their dreams..we also ensures that everyone
+            gets an opportunity to express their views and opinions for potential investors to invest in the ideas that
+            they are interested in.</p>
+
+        <br><br>
+
+    </div>
+    <div class="image" style="text-align: center">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3myQP7mu4cKUcgy9fX774-4THRhmzzjXgfMfvTml4z_YYTqZfQ"
+            width="400" height="200" alt="photo">
+    </div>
+    <br><br>
+    <div class="contact" style="text-align: center" style="border :darkslategray">
+        <h1>Contact Us</h1>
+        <ul>
+            <li>Email Address: ivonnahbonswuh@gmail.com</li>
+            <li>Address: Kileleshwa along Kandara Rd at Ngong Plaza 10th Floor</li>
+            <li>Office Number: +254 777 372 986</li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
