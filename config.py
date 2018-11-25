@@ -30,12 +30,12 @@ class ProdConfig(Config):
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:valqueen@localhost/pitch_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:valqueen@localhost/adventure_test'
 
 
 class DevConfig(Config):
 
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:valqueen@localhost/pitcher'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:valqueen@localhost/adventure'
     '''
     Development  configuration child class
 
