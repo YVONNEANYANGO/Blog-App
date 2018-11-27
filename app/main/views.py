@@ -18,7 +18,7 @@ def index():
     title = 'Home - Welcome A FANTASY EXPERIENCE BLOG Website Online'
     return render_template('index.html', title = title)
 
-# ViewC
+# Views
 @main.route('/')
 @login_required
 def index():
@@ -81,11 +81,11 @@ def update_pic(uname):
     return redirect(url_for('main.profile',uname=uname))
 
 
-@main.route('/comment/<pitch_id>', methods = ["GET","POST"]) 
+@main.route('/comment/<blog_id>', methods = ["GET","POST"]) 
 def comment(blog_id):
 
     '''
-    View pitch page function that returns the pitch details page and its data
+    View blog page function that returns the blog details page and its data
     '''
     blog = Blog.query.filter_by(id = blog_id).first()
     comment_form = CommentForm()
@@ -98,21 +98,19 @@ def comment(blog_id):
     return render_template('comment.html',comment_form =  comment_form)
 
 @main.route('/flying', methods = ["GET","POST"])
-def pickup():
+def flying():
     form = FlyingForm()
     if form.validate_on_submit():
         flying = form.body.data
         blog = Blog(description = flying, user = current_user, category = "flying")
         db.session.add(blog)
         db.session.commit()
-        # flash('Your pitch is already created')
-        # return redirect(url_for('main.pitch'))
-
+        
     blogs = Blog.query.filter_by(category = "flying")
     '''
     View blog page function that returns the pitch details page and its data
     '''
-    return render_template('flying.html', form = form, pickup_data = blogs)
+    return render_template('flying.html', form = form, flying_data = blogs)
 
 @main.route('/adventure', methods = ["GET","POST"])
 def Adventure():
@@ -122,12 +120,11 @@ def Adventure():
         blog = Blog(description = adventure, user = current_user, category = "adventure")
         db.session.add(blog)
         db.session.commit()
-        # flash('Your blog is already created')
-    # title = "Create an adventure"
+        
     blogs = Blog.query.filter_by(category = "adventure")
     
     '''
-    View blog page function that returns the pitch details page and its data
+    View blog page function that returns the blog details page and its data
     '''
     return render_template('adventure.html',form =form, adventure_data =blogs)
 
@@ -139,8 +136,7 @@ def cruise():
         blog = Blog(description = cruise, user = current_user, category = "cruise")
         db.session.add(blog)
         db.session.commit()
-        # flash('Your blog is already created')
-        # return redirect(url_for('main.pitch'))
+
 
     blogs = Blog.query.filter_by(category = "cruise")
     
@@ -157,16 +153,14 @@ def glamping():
         blog = Blog(description = glamping, user = current_user, category = "glamping")
         db.session.add(blog)
         db.session.commit()
-        # flash('Your pitch is already created')
-        # return redirect(url_for('main.pitch'))
-
+        
     blogs = Blog.query.filter_by(category = "glamping")
     
     '''
     View blog page function that returns the blog details page and its data
     '''
     return render_template('glamping.html', form = form, glamping_data = blogs)
-@main.route("/view/comments/<pitch_id>")
+@main.route("/view/comments/<blog_id>")
 def view_comments(blog_id):
 
     comments = Comment.query.filter_by(blog_id = blog_id)

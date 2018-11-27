@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:valqueen@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:vallerytt@localhost/adventure'
 
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
@@ -30,12 +30,12 @@ class ProdConfig(Config):
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:valqueen@localhost/adventure_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:vallerytt@localhost/adventure_test'
 
 
 class DevConfig(Config):
 
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:valqueen@localhost/adventure'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:vallerytt@localhost/adventure'
     '''
     Development  configuration child class
 
