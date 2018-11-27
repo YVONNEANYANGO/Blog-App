@@ -1,0 +1,13 @@
+
+
+<p><strong>Cruises</strong>Dining Cruises,Sunset Sails</p>
+{% for blog in interview_data%}
+<p>{{blog.description}}</p>
+<a href="{{url_for('main.comment',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">Add
+        Latest Info</button></a>
+<a href="{{url_for('main.view_comments',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">View
+        Comments</button></a>
+{% endfor %}
+{% for comment in comments%}
+<p>{{blog.description}}</p>
+{% endfor %}

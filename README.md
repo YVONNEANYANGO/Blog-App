@@ -46,12 +46,6 @@ Benefits for the users...Users are able to:-
 * Flask
 * Postgres db
 
-## How to Access the Application
-
-Run this command in your terminal
-$ git clone https://github.com/YVONNEANYANGO/Pitch.git
-$ cd Pitch
-
 ## Testing the Application
 
 Run this command to confirm if the application is running as expected

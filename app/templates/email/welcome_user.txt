@@ -1,0 +1,4 @@
+Hello {{user.username}}
+Welcome to to A FANTASY EXPERIENCE BLOG!!!
+We offer users a platform for viewing blogs and giving them an opportunity to comment and give their opinions.
+Hope you will enjoy our services

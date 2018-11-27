@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title>Welcome to A FANTASY EXPERIENCE BLOG</title>
+    {% endif %}
+</head>
+{% block content %}
+
+<div class="container">
+    <h1>CREATE A MEMORY</h1>
+    <P>Adventure is one of the most interesting things in life..below is a list of amazing experiences</P>
+    <p><strong>Adventure</strong>Skating,skydiving</p>
+    {% for blog in interview_data%}
+    <p>{{blog.description}}</p>
+    <a href="{{url_for('main.comment',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">Add
+            Latest Info</button></a>
+    <a href="{{url_for('main.view_comments',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">View
+            Comments</button></a>
+    {% endfor %}
+    {% for comment in comments%}
+    <p>{{blog.description}}</p>
+    {% endfor %}
+</div>
+{% endblock %}

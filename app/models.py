@@ -21,7 +21,7 @@ class User(UserMixin, db.Model):
     pass_secure = db.Column(db.String(255))
 
     comments = db.relationship('Comment',backref = 'user',lazy = "dynamic")
-    pitches = db.relationship('Pitch',backref = 'user',lazy = "dynamic")
+    blogs = db.relationship('Blog',backref = 'user',lazy = "dynamic")
 
     @property
     def password(self):
@@ -57,7 +57,7 @@ class Comment(db.Model):
     username = db.Column(db.String(255))
     comment = db.Column(db.String(255))
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-    pitch_id = db.Column(db.Integer,db.ForeignKey("pitches.id"))
+    blog_id = db.Column(db.Integer,db.ForeignKey("blogs.id"))
     def __repr__(self):
         return f'Comment {self.username}'
 

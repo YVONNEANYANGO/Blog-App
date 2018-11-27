@@ -23,7 +23,6 @@ class GlampingForm(FlaskForm):
     body = TextAreaField("Blog Description",validators=[DataRequired()])
     submit = SubmitField('Submit')
 
-
 class CommentForm(FlaskForm):
     body = TextAreaField("Comment Description",validators=[DataRequired()])
     submit = SubmitField('Submit')

@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
-<!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -9,27 +10,23 @@
     {% else %}
     <title>Welcome to  A FANTASY EXPERIENCE BLOG</title>
     {% endif %}
-</head>
+</head> -->
 {% block content %}
 
 <div class="container">
     <h1> {{ message }} </h1>
     <div class="row">
-        <div class="col-md-8">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXRj0AH8sMn6_clFMQazetJyN3jc99PotMz5Scm5cqGxrr3ogu4Q"
-                width="760" height="450" alt="photo">
+        <div class="col-md-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRn6eJCxovx0mYhWapLgmjBuw6_R8hACmOqH0wIIrJzYTd5LPq"alt="photo">
         </div>
         <div class="col-md-4">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNts285_aLCPA5UspWeEy6ryUurefyAxQfn11LBd7QwlWRAVEf"
-                width="500" height="200" alt="photo">
-            <br><br>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScPBmXs83MycC08sALB9YIXcgSmsNvGA0GXSlZd8Bei3ioRdaW"
-                width="500" height="230" atl="image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOQJdSsgmb7QCONODtREURtm76mdhSOWp7szPxKNArITjHQCnCWw" alt="photo">
+        </div>
+        <div class="col-md-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXRj0AH8sMn6_clFMQazetJyN3jc99PotMz5Scm5cqGxrr3ogu4Qa36az" alt="photo">
         </div>
     </div>
-
-    <br><br>
-    <br><br>
+</div>
 
     <div class="text" style="text-align:center">
         <h1>About Us</h1>
@@ -40,19 +37,41 @@
         <br><br>
 
     </div>
-    <div class="image" style="text-align: center">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO3myQP7mu4cKUcgy9fX774-4THRhmzzjXgfMfvTml4z_YYTqZfQ"
-            width="400" height="200" alt="photo">
-    </div>
+    
     <br><br>
-    <div class="contact" style="text-align: center" style="border :darkslategray">
-        <h1>Contact Us</h1>
-        <ul>
-            <li>Email Address: ivonnahbonswuh@gmail.com</li>
-            <li>Address: Kileleshwa along Kandara Rd at Ngong Plaza 10th Floor</li>
-            <li>Office Number: +254 777 372 986</li>
-        </ul>
-    </div>
+    <p><strong>Flying</strong><br>Learning how to fly balloon rides,helicopter tours</p>
+    {% for blog in interview_data%}
+    <p>{{blog.description}}</p>
+    <a href="{{url_for('main.comment',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">Add
+            Latest Info</button></a>
+    <a href="{{url_for('main.view_comments',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">View
+            Comments</button></a>
+    {% endfor %}
+    {% for comment in comments%}
+    <p>{{blog.description}}</p>
+    {% endfor %}
+    <p><strong>Glamping</strong><br>Overnight stays in luxury safari tents,teepees</p>
+    {% for blog in interview_data%}
+    <p>{{blog.description}}</p>
+    <a href="{{url_for('main.comment',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">Add
+            Latest Info</button></a>
+    <a href="{{url_for('main.view_comments',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">View
+            Comments</button></a>
+    {% endfor %}
+    {% for comment in comments%}
+    <p>{{blog.description}}</p>
+    {% endfor %}
+    <p><strong>Tours</strong><br>Food tours,bike tours,road trips and picnics</p>
+    {% for blog in interview_data%}
+    <p>{{blog.description}}</p>
+    <a href="{{url_for('main.comment',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">Add
+            Latest Info</button></a>
+    <a href="{{url_for('main.view_comments',adventure_id = adventure.id)}}"><button class="btn btn-outline-info">View
+            Comments</button></a>
+    {% endfor %}
+    {% for comment in comments%}
+    <p>{{blog.description}}</p>
+    {% endfor %}
 </div>
 
 {% endblock %}
